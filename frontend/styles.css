@@ -1738,6 +1738,61 @@ body.chat-mode {
     to { transform: rotate(360deg); }
 }
 
+/* About Section */
+.about-section {
+    padding: 120px 80px;
+    position: relative;
+    background: linear-gradient(180deg, rgba(168, 85, 247, 0.03) 0%, transparent 100%);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-xl);
+    padding: 36px;
+    transition: all var(--transition-base);
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-500);
+    box-shadow: var(--shadow-glow-sm);
+}
+
+.about-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: var(--radius-lg);
+    margin-bottom: 20px;
+}
+
+.about-card h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
 /* CTA Section */
 .cta-section {
     padding: 120px 80px;
@@ -2020,6 +2075,10 @@ body.chat-mode .app-container {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
     .capabilities-container {
         flex-direction: column;
         gap: 60px;
@@ -2071,6 +2130,7 @@ body.chat-mode .app-container {
     
     .features-section,
     .capabilities-section,
+    .about-section,
     .cta-section {
         padding: 80px 24px;
     }
