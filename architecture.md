@@ -179,6 +179,7 @@ Each plugin is a Python class with decorated methods that Semantic Kernel can in
   - `AddTask(task, priority, due)`: Adds a new task
   - `CompleteTask(task_id)`: Marks a task as complete
 - **How it works**: Maintains a shared list across requests, pre-populated with sample tasks
+- **⚠️ Security Note**: Tasks are stored globally and shared across ALL users and requests. This means any user can see and modify tasks created by others. This design is acceptable for single-user/development scenarios but should NOT be used in multi-user or production environments without proper isolation per user.
 
 ### Request Flow (Backend)
 
@@ -391,9 +392,12 @@ The backend uses Azure CLI credentials:
 
 ### CORS Configuration
 
-- Allows all origins (`allow_origins=["*"]`)
-- Suitable for development
-- Should be restricted in production
+- **Current Setting**: Allows all origins (`allow_origins=["*"]`)
+- **⚠️ SECURITY WARNING**: This configuration is ONLY suitable for local development
+- **Production Requirement**: MUST be restricted to specific domains before deployment
+  - Example: `allow_origins=["https://yourdomain.com", "https://app.yourdomain.com"]`
+  - Never deploy to production with `allow_origins=["*"]` as it exposes your API to cross-site attacks
+- Allowing all origins permits any website to make requests to your API, potentially exposing sensitive data or enabling abuse
 
 ### API Security
 
@@ -445,7 +449,7 @@ python -m http.server 3000
 - Enterprise-ready and well-maintained
 
 **Alternative Considered:**
-- LangChain: More popular but heavier
+- LangChain: More popular but has a larger dependency footprint (100+ dependencies vs Semantic Kernel's ~20), steeper learning curve for basic use cases, and more complex API surface. Semantic Kernel was chosen for its simplicity, focus on Microsoft ecosystem, and lighter weight for this application's needs.
 
 ### Why Vanilla JavaScript?
 
@@ -505,8 +509,8 @@ python -m http.server 3000
 
 ### Potential Bottlenecks
 
-1. **Azure OpenAI Latency**: 1-3 seconds per request
-2. **External API Calls**: 100-500ms per call
+1. **Azure OpenAI Latency**: Typical latency of 1-3 seconds per request (varies based on model, region, prompt complexity, and service load)
+2. **External API Calls**: Typically 100-500ms per call (varies by API provider and network conditions)
 3. **Sequential Plugin Calls**: Not parallelized by default
 4. **No Caching**: Every request hits APIs fresh
 
