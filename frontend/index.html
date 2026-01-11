@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova AI - Your Intelligent Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ========================================================================
+         LANDING PAGE
+         ======================================================================== -->
+    <div class="landing-page" id="landing-page">
+        <!-- Animated Background for Landing -->
+        <div class="landing-bg">
+            <div class="gradient-sphere sphere-1"></div>
+            <div class="gradient-sphere sphere-2"></div>
+            <div class="gradient-sphere sphere-3"></div>
+            <div class="particles"></div>
+            <div class="grid-pattern"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="landing-nav">
+            <div class="nav-logo">
+                <div class="nav-logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="url(#nav-gradient)" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="8" fill="url(#nav-gradient)"/>
+                        <circle cx="20" cy="8" r="3" fill="url(#nav-gradient)"/>
+                        <circle cx="20" cy="32" r="3" fill="url(#nav-gradient)"/>
+                        <circle cx="8" cy="20" r="3" fill="url(#nav-gradient)"/>
+                        <circle cx="32" cy="20" r="3" fill="url(#nav-gradient)"/>
+                        <defs>
+                            <linearGradient id="nav-gradient" x1="0" y1="0" x2="40" y2="40">
+                                <stop offset="0%" stop-color="#a855f7"/>
+                                <stop offset="100%" stop-color="#6366f1"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="nav-logo-text">Nova AI</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#capabilities" class="nav-link">Capabilities</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <button class="nav-cta" onclick="enterChatExperience()">
+                Launch App
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content-landing">
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-icon">✨</span>
+                    <span>AI-Powered Intelligence</span>
+                </div>
+                <h1 class="hero-headline">
+                    Meet <span class="gradient-text-hero">Nova</span><br>
+                    Your Personal AI Assistant
+                </h1>
+                <p class="hero-subheadline">
+                    Experience the future of productivity with real-time data, intelligent conversations, 
+                    and seamless integrations. Nova helps you work smarter, not harder.
+                </p>
+                <div class="hero-actions">
+                    <button class="hero-btn primary" onclick="enterChatExperience()">
+                        <span>Start Chatting</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                        </svg>
+                    </button>
+                    <button class="hero-btn secondary" onclick="scrollToFeatures()">
+                        <span>Explore Features</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12l7 7 7-7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">10+</span>
+                        <span class="stat-label">Live APIs</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">Real-time</span>
+                        <span class="stat-label">Data Updates</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Available</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80" 
+                         alt="AI Visualization" 
+                         class="hero-image main-hero">
+                    <div class="image-glow"></div>
+                </div>
+                <div class="floating-elements">
+                    <div class="float-card float-weather">
+                        <span class="float-icon">☀️</span>
+                        <div class="float-content">
+                            <span class="float-title">New York</span>
+                            <span class="float-value">72°F Sunny</span>
+                        </div>
+                    </div>
+                    <div class="float-card float-currency">
+                        <span class="float-icon">💱</span>
+                        <div class="float-content">
+                            <span class="float-title">USD → EUR</span>
+                            <span class="float-value">$1 = €0.92</span>
+                        </div>
+                    </div>
+                    <div class="float-card float-time">
+                        <span class="float-icon">🌍</span>
+                        <div class="float-content">
+                            <span class="float-title">Tokyo</span>
+                            <span class="float-value">9:45 PM JST</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">Everything You Need, Powered by AI</h2>
+                <p class="section-subtitle">Nova combines cutting-edge AI with real-time data to deliver intelligent assistance for your daily needs.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&q=80" alt="Weather">
+                        <div class="icon-overlay">🌤️</div>
+                    </div>
+                    <h3>Live Weather</h3>
+                    <p>Get real-time weather forecasts for any city worldwide with detailed conditions and predictions.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&q=80" alt="Finance">
+                        <div class="icon-overlay">💰</div>
+                    </div>
+                    <h3>Currency Exchange</h3>
+                    <p>Access live ECB exchange rates and convert between 30+ currencies instantly.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&q=80" alt="Global">
+                        <div class="icon-overlay">🌍</div>
+                    </div>
+                    <h3>World Clock</h3>
+                    <p>Track time across 20+ major cities and never miss a meeting across time zones.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80" alt="Calculator">
+                        <div class="icon-overlay">📊</div>
+                    </div>
+                    <h3>Finance Tools</h3>
+                    <p>Calculate mortgages, investments, and savings with precision financial tools.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Knowledge">
+                        <div class="icon-overlay">📚</div>
+                    </div>
+                    <h3>Knowledge Base</h3>
+                    <p>Access Wikipedia and curated knowledge sources for instant answers to any question.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&q=80" alt="Inspiration">
+                        <div class="icon-overlay">✨</div>
+                    </div>
+                    <h3>Daily Inspiration</h3>
+                    <p>Start your day with motivational quotes, jokes, and positive affirmations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities Section -->
+        <section class="capabilities-section" id="capabilities">
+            <div class="capabilities-container">
+                <div class="capabilities-content">
+                    <span class="section-tag">Capabilities</span>
+                    <h2 class="section-title">Powered by Semantic Kernel</h2>
+                    <p class="capabilities-description">
+                        Nova leverages Microsoft's Semantic Kernel framework to orchestrate AI capabilities 
+                        with real-world APIs. Experience intelligent task planning and execution.
+                    </p>
+                    <div class="capability-list">
+                        <div class="capability-item">
+                            <div class="capability-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </div>
+                            <span>Real-time data integration</span>
+                        </div>
+                        <div class="capability-item">
+                            <div class="capability-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </div>
+                            <span>Intelligent task orchestration</span>
+                        </div>
+                        <div class="capability-item">
+                            <div class="capability-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </div>
+                            <span>Natural language understanding</span>
+                        </div>
+                        <div class="capability-item">
+                            <div class="capability-check">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <path d="M20 6L9 17l-5-5"/>
+                                </svg>
+                            </div>
+                            <span>Multi-API aggregation</span>
+                        </div>
+                    </div>
+                    <button class="capability-cta" onclick="enterChatExperience()">
+                        Try Nova Now
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="capabilities-visual">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=600&q=80" 
+                         alt="AI Brain" 
+                         class="capabilities-image">
+                    <div class="visual-decoration">
+                        <div class="orbit orbit-1"></div>
+                        <div class="orbit orbit-2"></div>
+                        <div class="orbit orbit-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Experience the Future?</h2>
+                <p>Join thousands of users who are already working smarter with Nova AI.</p>
+                <button class="cta-button" onclick="enterChatExperience()">
+                    <span>Launch Nova AI</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="cta-decoration">
+                <div class="cta-orb cta-orb-1"></div>
+                <div class="cta-orb cta-orb-2"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="landing-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg viewBox="0 0 40 40" fill="none" width="32" height="32">
+                            <circle cx="20" cy="20" r="18" stroke="url(#footer-gradient)" stroke-width="2"/>
+                            <circle cx="20" cy="20" r="8" fill="url(#footer-gradient)"/>
+                            <defs>
+                                <linearGradient id="footer-gradient" x1="0" y1="0" x2="40" y2="40">
+                                    <stop offset="0%" stop-color="#a855f7"/>
+                                    <stop offset="100%" stop-color="#6366f1"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span>Nova AI</span>
+                    </div>
+                    <p class="footer-tagline">Your intelligent AI assistant, powered by Semantic Kernel.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#capabilities">Capabilities</a>
+                        <a href="#" onclick="enterChatExperience()">Launch App</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="https://learn.microsoft.com/semantic-kernel/" target="_blank">Documentation</a>
+                        <a href="https://github.com/microsoft/semantic-kernel" target="_blank">GitHub</a>
+                        <a href="#about">About</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Built with ❤️ using Semantic Kernel</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ========================================================================
+         CHAT APPLICATION
+         ======================================================================== -->
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <div class="app-container" id="chat-app">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-inner">
+                <!-- Logo -->
+                <div class="logo-section">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="18" stroke="url(#logo-gradient)" stroke-width="2"/>
+                                <circle cx="20" cy="20" r="8" fill="url(#logo-gradient)"/>
+                                <circle cx="20" cy="8" r="3" fill="url(#logo-gradient)"/>
+                                <circle cx="20" cy="32" r="3" fill="url(#logo-gradient)"/>
+                                <circle cx="8" cy="20" r="3" fill="url(#logo-gradient)"/>
+                                <circle cx="32" cy="20" r="3" fill="url(#logo-gradient)"/>
+                                <defs>
+                                    <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40">
+                                        <stop offset="0%" stop-color="#a855f7"/>
+                                        <stop offset="100%" stop-color="#6366f1"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-name">Nova AI</span>
+                            <span class="logo-tagline">Intelligent Assistant</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Status Badge -->
+                <div class="status-badge" id="status-badge">
+                    <div class="status-pulse"></div>
+                    <span class="status-text">Connecting...</span>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="actions-section">
+                    <h3 class="section-label">Quick Actions</h3>
+                    <div class="action-cards">
+                        <button class="action-card" onclick="sendQuickAction('What\\'s the weather in New York, London, and Tokyo?')">
+                            <div class="action-icon">🌤️</div>
+                            <div class="action-content">
+                                <span class="action-title">Weather</span>
+                                <span class="action-desc">Global forecasts</span>
+                            </div>
+                        </button>
+                        <button class="action-card" onclick="sendQuickAction('Convert 1000 USD to EUR, GBP, JPY, and INR')">
+                            <div class="action-icon">💱</div>
+                            <div class="action-content">
+                                <span class="action-title">Currency</span>
+                                <span class="action-desc">Live rates</span>
+                            </div>
+                        </button>
+                        <button class="action-card" onclick="sendQuickAction('What time is it in Sydney, Dubai, Paris, and Seattle?')">
+                            <div class="action-icon">🌍</div>
+                            <div class="action-content">
+                                <span class="action-title">World Clock</span>
+                                <span class="action-desc">Time zones</span>
+                            </div>
+                        </button>
+                        <button class="action-card" onclick="sendQuickAction('Give me a motivational quote and tell me a joke')">
+                            <div class="action-icon">✨</div>
+                            <div class="action-content">
+                                <span class="action-title">Inspire Me</span>
+                                <span class="action-desc">Quotes & jokes</span>
+                            </div>
+                        </button>
+                        <button class="action-card" onclick="sendQuickAction('Calculate monthly payments for a $400,000 mortgage at 6.5% for 30 years')">
+                            <div class="action-icon">🏠</div>
+                            <div class="action-content">
+                                <span class="action-title">Finance</span>
+                                <span class="action-desc">Calculators</span>
+                            </div>
+                        </button>
+                        <button class="action-card" onclick="sendQuickAction('Tell me about the history of artificial intelligence')">
+                            <div class="action-icon">📚</div>
+                            <div class="action-content">
+                                <span class="action-title">Learn</span>
+                                <span class="action-desc">Wikipedia facts</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Capabilities -->
+                <div class="capabilities-section">
+                    <h3 class="section-label">Powered By</h3>
+                    <div class="api-pills">
+                        <span class="api-pill">wttr.in</span>
+                        <span class="api-pill">ECB Rates</span>
+                        <span class="api-pill">Wikipedia</span>
+                        <span class="api-pill">World Time</span>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="sidebar-footer">
+                    <div class="powered-by">
+                        <span>Built with Semantic Kernel</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" onclick="toggleSidebar()">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                    <button class="back-to-landing" onclick="backToLanding()" title="Back to Home">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                        <span>Home</span>
+                    </button>
+                </div>
+                <div class="header-center">
+                    <h1 class="header-title">Chat</h1>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                    <button class="clear-chat-btn" onclick="clearChat()" title="Clear conversation">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="3 6 5 6 21 6"></polyline>
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                        </svg>
+                        <span>Clear</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <!-- Hero Welcome Screen -->
+                <div class="hero-welcome" id="hero-welcome">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <span class="badge-dot"></span>
+                            <span>Live APIs • Real-time Data</span>
+                        </div>
+                        
+                        <h1 class="hero-title">
+                            <span class="gradient-text">Hello, I'm Nova</span>
+                            <br>
+                            <span class="hero-subtitle">Your AI-powered assistant</span>
+                        </h1>
+                        
+                        <p class="hero-description">
+                            I can help you with weather forecasts, currency conversion, world time, 
+                            financial calculations, and much more — all using live data.
+                        </p>
+
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon-wrapper">
+                                    <span class="feature-icon">🌤️</span>
+                                </div>
+                                <h3>Live Weather</h3>
+                                <p>Real-time forecasts for any city worldwide</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-wrapper">
+                                    <span class="feature-icon">💱</span>
+                                </div>
+                                <h3>Currency Exchange</h3>
+                                <p>ECB rates updated daily</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-wrapper">
+                                    <span class="feature-icon">🌍</span>
+                                </div>
+                                <h3>World Time</h3>
+                                <p>Current time in 20+ cities</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon-wrapper">
+                                    <span class="feature-icon">📊</span>
+                                </div>
+                                <h3>Finance Tools</h3>
+                                <p>Mortgages, investments & more</p>
+                            </div>
+                        </div>
+
+                        <div class="suggestion-chips">
+                            <span class="chip-label">Try asking:</span>
+                            <button class="suggestion-chip" onclick="sendQuickAction('What\\'s the weather like in Paris right now?')">
+                                Weather in Paris
+                            </button>
+                            <button class="suggestion-chip" onclick="sendQuickAction('Convert 500 EUR to USD and GBP')">
+                                Convert EUR to USD
+                            </button>
+                            <button class="suggestion-chip" onclick="sendQuickAction('Tell me an interesting fact about space')">
+                                Random fact
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Decorative Elements -->
+                    <div class="hero-decoration">
+                        <div class="floating-card card-1">
+                            <span>🌡️ 72°F</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <span>💰 $1 = €0.92</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <span>🕐 9:45 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Container -->
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Messages will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-section">
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="message-input" 
+                            placeholder="Ask me anything..."
+                            rows="1"
+                            autofocus
+                        ></textarea>
+                        <div class="input-actions">
+                            <button class="send-btn" id="send-btn" onclick="sendMessage()">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="input-hint">Press <kbd>Enter</kbd> to send • <kbd>Shift + Enter</kbd> for new line</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
